@@ -31,7 +31,7 @@ export default {
   border-radius: 50%;
   background: black;
   position:absolute;
-  top: calc(50% - 50px);
+  top: -50px;
   .eye {
     width: 10px;
     height: 10px;

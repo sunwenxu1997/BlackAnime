@@ -24,7 +24,7 @@ export default {
       easing:'linear',
       duration: 5000,
       complete: function(anime) {
-        _this.$parent.playIndex = 2;
+        // _this.$parent.playIndex = 2;
       }
     });
   }

@@ -8,13 +8,16 @@
         :key="index+'i'"
         :style="` clip-path: polygon(${$anime.random(0,10)}px 0px,${$anime.random(0,25)}px 0px, ${$anime.random(0,50)}px 10px,${$anime.random(0,45)}px 50px,${$anime.random(0,20)}px 50px,0px 30px);`"
       ></div>
-      <div class="chongzi" v-for="(c,index) in chongziNum" :key="index+'c'"></div>
+      <div v-show="chongzi" class="chongzi" v-for="(c,index) in chongziNum" :key="index+'c'"></div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    chongzi: { default: true }
+  },
   data() {
     return {
       stoneNum: 0, //生成石块个数
@@ -96,10 +99,10 @@ export default {
               return w;
             }
           },
-          delay:function (el,i,l) {
-            return i *100
+          delay: function(el, i, l) {
+            return i * 100;
           },
-          duration: 8000,
+          duration: 18000,
           easing: "linear"
         });
     }

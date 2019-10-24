@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- 场景2 -->
+    <!-- 进入页面 -->
     <ball id="ball"></ball>
     <land></land>
   </div>
@@ -10,7 +10,7 @@
 import ball from "@/components/common/people/ball";
 import land from "@/components/common/scene/land";
 export default {
-  name: "anime_2",
+  name: "anime_1",
   components: {
     ball: ball,
     land: land
@@ -24,7 +24,7 @@ export default {
       easing:'linear',
       duration: 5000,
       complete: function(anime) {
-        _this.$parent.playIndex = 2;
+        // _this.$parent.playIndex = 2;
       }
     });
   }

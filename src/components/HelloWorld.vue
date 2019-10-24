@@ -1,22 +1,25 @@
 <template>
   <div class="hello">
+    <anime0 v-if="playIndex == 0"></anime0>
     <anime1 v-if="playIndex == 1"></anime1>
-    <anime2 v-if="playIndex == 2"></anime2>
+    <!-- <anime2 v-if="playIndex == 2"></anime2> -->
   </div>
 </template>
 
 <script>
+import anime_0 from "@/components/page/anime_0";
 import anime_1 from "@/components/page/anime_1";
 import anime_2 from "@/components/page/anime_2";
 export default {
   name: "HelloWorld",
   components: {
+    anime0: anime_0,
     anime1: anime_1,
     anime2: anime_2
   },
   data() {
     return {
-      playIndex: 1
+      playIndex: 0
     };
   }
 };
