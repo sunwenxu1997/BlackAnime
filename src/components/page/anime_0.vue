@@ -10,7 +10,6 @@
     ></splitText>
     <splitText
     id="msg"
-      style="margin-top:15%"
       :text="msg"
       :text_bck="'white'"
       :text_color="'#464545'"
@@ -289,7 +288,11 @@ export default {
   }
 
   #title {
-    margin-top: 8%;
+    margin-top: 10%;
+  }
+  #msg{
+     margin-top: 5%;
+    z-index: 55;
   }
 }
 .playBtn {
@@ -302,7 +305,7 @@ export default {
   position: absolute;
   left: calc(50% - 75px);
   top: calc(50% - 75px);
-  opacity: 0.5;
+  opacity: 0;
   transition: 0.5s;
   display: flex;
   justify-content: center;
