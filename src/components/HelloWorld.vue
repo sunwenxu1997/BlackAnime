@@ -2,7 +2,7 @@
   <div class="hello">
     <anime0 v-if="playIndex == 0"></anime0>
     <anime1 v-if="playIndex == 1"></anime1>
-    <!-- <anime2 v-if="playIndex == 2"></anime2> -->
+    <anime2 v-if="playIndex == 2"></anime2>
   </div>
 </template>
 

@@ -4,6 +4,7 @@
     <div class="land">
       <div
         class="stone"
+        v-show="stone"
         v-for="(i,index) in stoneNum"
         :key="index+'i'"
         :style="` clip-path: polygon(${$anime.random(0,10)}px 0px,${$anime.random(0,25)}px 0px, ${$anime.random(0,50)}px 10px,${$anime.random(0,45)}px 50px,${$anime.random(0,20)}px 50px,0px 30px);`"
@@ -16,12 +17,13 @@
 <script>
 export default {
   props: {
-    chongzi: { default: true }
+    chongzi: { default: true },//是否显示虫子，默认显示
+    stone:{default:true},//是否显示石块，默认显示
   },
   data() {
     return {
       stoneNum: 0, //生成石块个数
-      chongziNum: 8
+      chongziNum: 8, //默认虫子个数
     };
   },
   created() {

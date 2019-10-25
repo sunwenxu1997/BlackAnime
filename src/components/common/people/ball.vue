@@ -2,15 +2,26 @@
     <div class="ball" :style="`width:${ball_w}px;height:${ball_h}px`">
       <div class="eye"></div>
       <i class="iconfont iconfuzhuang-hudiejie" id="hudie" v-if="hudiejie"></i>
+      <chatBox :top="-60" :sayMsg="speakMsg" v-if="chat"></chatBox>
     </div>
 </template>
 
 <script>
+import chatBox from "@/components/common/tool/chatBox";
 export default {
+  components: {
+    chatBox: chatBox
+  },
   props: {
     ball_w: Number,
     ball_h: Number,
     hudiejie: {default: false}
+  },
+  data(){
+    return{
+      speakMsg:'',
+      chat:false
+    }
   },
   mounted() {
     this.$anime({
@@ -18,7 +29,7 @@ export default {
       scaleY: 0,
       loop: true,
       delay: 1500,
-      duration: 100
+      duration: 100,
     });
   }
 };

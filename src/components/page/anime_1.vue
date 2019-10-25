@@ -1,7 +1,9 @@
 <template>
   <div>
     <!-- 场景1 -->
-    <ball id="ball"></ball>
+    <div class="line">
+      <ball id="ball"></ball>
+    </div>
     <land></land>
   </div>
 </template>
@@ -17,14 +19,14 @@ export default {
   },
   mounted() {
     let _this = this;
-    let w = window.innerWidth
+    let w = window.innerWidth;
     this.$anime({
       targets: "#ball",
       translateX: w,
-      easing:'linear',
+      easing: "linear",
       duration: 5000,
       complete: function(anime) {
-        // _this.$parent.playIndex = 2;
+        _this.$parent.playIndex = 2;
       }
     });
   }
