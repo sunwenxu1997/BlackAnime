@@ -9,10 +9,10 @@
 <script>
 export default {
   name: "App",
-  data(){
-      return{
-           cover:true
-      }
+  data() {
+    return {
+      cover: true
+    };
   },
   created() {
     let _this = this;
@@ -21,10 +21,10 @@ export default {
     function resize(fals) {
       if (window.orientation == 0 || window.orientation == 180) {
         console.log("竖屏");
-        _this.cover = true
+        _this.cover = true;
       } else {
         console.log("横屏");
-        _this.cover = false
+        _this.cover = false;
       }
     }
     resize(true);
@@ -33,12 +33,12 @@ export default {
 </script>
 
 <style scoped>
-#app{
+#app {
   width: 100%;
   height: 100%;
   position: absolute;
 }
-.cover{
+.cover {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -52,7 +52,7 @@ export default {
   font-weight: bold;
   font-size: 20px;
 }
-.hint{
+.hint {
   width: 100%;
   text-align: center;
   color: white;

@@ -13,6 +13,13 @@
       "unicode_decimal": 59086
     },
     {
+      "icon_id": "802969",
+      "name": "楼房",
+      "font_class": "loufang",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
       "icon_id": "4670126",
       "name": "认识学校",
       "font_class": "renshixuexiao",

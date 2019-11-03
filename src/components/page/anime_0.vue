@@ -9,7 +9,7 @@
       :bold="true"
     ></splitText>
     <splitText
-    id="msg"
+      id="msg"
       :text="msg"
       :text_bck="'white'"
       :text_color="'#464545'"
@@ -32,14 +32,13 @@
         <immortal ref="immortal"></immortal>
       </div>
       <mountain
-        v-for="i in 8"
-        :key="i"
-        :mountain_w="$anime.random(500,w)"
-        :style="` transform: translateX(${$anime.random(-w*2,w/2.5)}px) scaleY(${$anime.random(1,1.5)});`"
+        v-for="(i,indexm) in mountainList"
+        :key="indexm"
+        :mountain_w="i.mw"
+        :style="` transform: translateX(${i.mx}px) scaleY(${i.my});`"
       ></mountain>
       <land :chongzi="false" :stone="false"></land>
     </div>
-
     <div class="playBtn" @click="play()" ref="play" v-if="playShow">
       <div class="btn"></div>
     </div>
@@ -74,9 +73,21 @@ export default {
       w: window.innerWidth,
       h: window.innerHeight / 2,
       playShow: true,
+      mountainList: [],
       title: "My Dream",
       msg: "我的 梦想"
     };
+  },
+  created() {
+    let _this = this
+    for (let i = 0; i < 8; i++) {
+      let obj = {
+        mw: _this.$anime.random(500, _this.w),
+        mx: _this.$anime.random(-_this.w * 2, _this.w / 2.5),
+        my: _this.$anime.random(1, 2)
+      };
+      _this.mountainList.push(obj);
+    }
   },
   mounted() {
     let _this = this;
@@ -159,7 +170,8 @@ export default {
           autoplay: false,
           loop: 1,
           easing: "linear",
-          duration: 1000
+          duration: 1000,
+          delay: 10000
         })
         .add({
           targets: ".box",
@@ -169,13 +181,15 @@ export default {
               targets: ".overall-after",
               width: "100%",
               easing: "linear",
-              duration: 500
+              duration: 500,
+              delay: 10000
             });
             _this.$anime({
-              targets: ["#bird", ".pubu", "#title","#msg"],
+              targets: ["#bird", ".pubu", "#title", "#msg"],
               opacity: 0,
               easing: "linear",
-              duration: 500
+              duration: 500,
+              delay: 10000
             });
           },
           complete: function(anime) {
@@ -218,7 +232,9 @@ export default {
                 easing: "linear",
                 translateX: _this.w,
                 complete: function(anime) {
-                  // _this.$parent.playIndex = 1;
+                  _this.$parent.playIndex = 1;
+                    _this.$parent.$refs.audio0.pause();
+                  _this.$parent.$refs.audio1.play();
                 }
               });
           }
@@ -226,6 +242,7 @@ export default {
       _this.$refs["play"].onclick = tl.play; //开始
     },
     play() {
+     this.$parent.$refs.audio0.play();
       this.playShow = false;
     }
   }
@@ -290,8 +307,8 @@ export default {
   #title {
     margin-top: 10%;
   }
-  #msg{
-     margin-top: 5%;
+  #msg {
+    margin-top: 5%;
     z-index: 55;
   }
 }
@@ -305,7 +322,6 @@ export default {
   position: absolute;
   left: calc(50% - 75px);
   top: calc(50% - 75px);
-  opacity: 0;
   transition: 0.5s;
   display: flex;
   justify-content: center;

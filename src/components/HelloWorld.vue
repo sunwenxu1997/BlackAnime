@@ -1,5 +1,8 @@
 <template>
   <div class="hello">
+    <audio ref="audio0" src="static/music/bck_wangzhe.mp3"  loop></audio>
+    <audio ref="audio1" src="static/music/bck_menu.mp3"  loop></audio>
+    <audio ref="audio2" src="static/music/bck_Tempo.mp3"  loop></audio>
     <anime0 v-if="playIndex == 0"></anime0>
     <anime1 v-if="playIndex == 1"></anime1>
     <anime2 v-if="playIndex == 2"></anime2>
