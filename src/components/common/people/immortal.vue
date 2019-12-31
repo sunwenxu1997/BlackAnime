@@ -1,7 +1,7 @@
 <template>
     <div class="immortal">
       <!-- 神仙 -->
-      <div class="maozi"></div>
+      <div class="maozi" v-if="maozi_show"></div>
       <div id="eye" class="eye-l"></div>
       <div id="eye" class="eye-r"></div>
       <div class="zui"></div>
@@ -15,6 +15,9 @@ import chatBox from "@/components/common/tool/chatBox";
 export default {
   components: {
     chatBox: chatBox
+  },
+  props:{
+    maozi_show:{default:true}
   },
   data(){
     return{

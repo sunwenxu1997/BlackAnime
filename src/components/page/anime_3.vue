@@ -1,28 +1,12 @@
 <template>
   <div class="hold-bck">
+    <i id="diaodeng" class="iconfont icondiaodeng"></i>
     <!-- 进入页面 -->
     <div class="line">
       <ball id="ball-son" ref="ball-son"></ball>
+      <immortal id="ball_people" ref="ball_people" :maozi_show="false"></immortal>
       <div class="parents">
-        <ball
-          id="ball-parents"
-          ref="ball-dad"
-          :toLeft="true"
-          :class="'ball-dad'"
-          :ball_w="70"
-          :ball_h="70"
-        ></ball>
-        <ball
-          id="ball-parents"
-          ref="ball-mom"
-          :ball_w="65"
-          :class="'ball-mom'"
-          :ball_h="65"
-          :hudiejie="true"
-          :toLeft="true"
-        ></ball>
-        <i class="iconfont iconloufang" id="loufang"></i>
-        <i class="iconfont iconicon-test" id="paoche"></i>
+        <canzhuo></canzhuo>
       </div>
     </div>
     <land></land>
@@ -31,12 +15,16 @@
 
 <script>
 import ball from "@/components/common/people/ball";
+import immortal from "@/components/common/people/immortal";
 import land from "@/components/common/scene/land";
+import canzhuo from "@/components/common/scene/canzhuo";
 export default {
-  name: "anime_1",
+  name: "anime_3",
   components: {
     ball: ball,
-    land: land
+    land: land,
+    canzhuo: canzhuo,
+    immortal: immortal
   },
   data() {
     return {
@@ -47,83 +35,64 @@ export default {
   mounted() {
     let _this = this;
     let son = _this.$refs["ball-son"];
-    let dad = _this.$refs["ball-dad"];
-    let mom = _this.$refs["ball-mom"];
+    let people = _this.$refs["ball_people"];
     let my = _this.$anime.timeline({
       targets: "#ball-son",
       easing: "linear"
     });
     my.add({
-      translateY: [-_this.h, 0],
+      translateY:0,
       duration: 500,
       endDelay: 1000
     })
       .add({
-        translateX: _this.w / 2,
+        translateX: _this.w / 3,
         duration: 1000
       })
       .add({
+        duration: 1000,
+        complete: function() {
+          people.chat = false;
+          son.chat = true;
+          son.speakMsg = "哇哦 😱，这么多好吃的~~";
+        }
+      })
+      .add({
         duration: 5000,
         complete: function() {
-          dad.chat = false;
+          people.chat = false;
           son.chat = true;
-          son.speakMsg = "你们是我爸妈么?!";
+          son.speakMsg = "真香 😜";
         }
       });
 
-    //父母时间线
-    let parents = _this.$anime.timeline({
-      targets: "#ball-parents",
+    //仆人时间线
+    let peopleTime = _this.$anime.timeline({
+      targets: "#ball_people",
       easing: "linear"
     });
-    parents
+    peopleTime
       .add({
         duration: 1000,
         complete: function() {
-          dad.chat = true;
-          dad.speakMsg = "儿子，快到爸爸这来！";
-        }
-      })
-      .add({
-        duration: 2000,
-        complete: function() {
-          dad.chat = false;
-          mom.chat = true;
-          mom.speakMsg = "老公,儿子长得像你。真黑~~ 😄";
-        }
-      })
-      .add({
-        duration: 2000,
-        complete: function() {
-          dad.chat = true;
-          mom.chat = false;
-          dad.speakMsg = "黑黑更健康，知道啥！";
+          people.chat = true;
+          people.speakMsg = "少爷，快到这边来就餐吧！";
         }
       })
       .add({
         duration: 5000,
         complete: function() {
           son.chat = false;
-          dad.chat = false;
-          mom.chat = true;
-          mom.speakMsg = "肯定了，傻孩子";
-        }
-      })
-      .add({
-        duration: 2000,
-        complete: function() {
-          son.chat = false;
-          dad.chat = true;
-          mom.chat = false;
-          dad.speakMsg = "我跟你说，老爸可有钱了，走~~跟我回家吧";
+          people.chat = true;
+          people.speakMsg = "这都是老爷让我给您准备的";
           _this.$anime({
             targets: "#ball-son",
             easing: "linear",
-            delay: 2000,
+            delay: 4000,
             translateX: _this.w,
             duration: 3000,
             complete: function(anime) {
-              _this.$parent.playIndex = 3;
+              _this.$parent.playIndex = 4;
             }
           });
         }
@@ -133,6 +102,22 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#diaodeng {
+  position: absolute;
+  left: 45%;
+  top: -25px;
+  font-size: 10rem;
+  transform-origin: 50% 0;
+  animation: huangdong 2s linear infinite alternate;
+}
+@keyframes huangdong {
+  0% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
 .parents {
   height: 50px;
   background: red;

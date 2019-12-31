@@ -171,7 +171,7 @@ export default {
           loop: 1,
           easing: "linear",
           duration: 1000,
-          delay: 10000
+          delay: 5000
         })
         .add({
           targets: ".box",
@@ -182,14 +182,14 @@ export default {
               width: "100%",
               easing: "linear",
               duration: 500,
-              delay: 10000
+              delay: 5000
             });
             _this.$anime({
               targets: ["#bird", ".pubu", "#title", "#msg"],
               opacity: 0,
               easing: "linear",
               duration: 500,
-              delay: 10000
+              delay: 5000
             });
           },
           complete: function(anime) {
@@ -306,6 +306,7 @@ export default {
 
   #title {
     margin-top: 10%;
+    z-index: 999;
   }
   #msg {
     margin-top: 5%;

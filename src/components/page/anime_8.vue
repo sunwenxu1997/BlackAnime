@@ -3,6 +3,16 @@
     <!-- 进入页面 -->
     <div class="line">
       <ball id="ball-son" ref="ball-son"></ball>
+      <div class="other">
+        <div class="xiangce">
+          <div class="dot"></div>
+          <div class="dot" style="left:29px;bottom:-6px;transform: scale(0.7);"></div>
+          <div class="dot" style="left:55px;bottom:-2px;transform: scale(0.9);"></div>
+        </div>
+        <i class="iconfont iconhuaping"></i>
+        <i class="iconfont iconshujia" style="left:50px"></i>
+        <i class="iconfont iconbingxiang" style="font-size:10rem;top:20px;left:200px;"></i>
+      </div>
       <div class="parents">
         <ball
           id="ball-parents"
@@ -21,8 +31,6 @@
           :hudiejie="true"
           :toLeft="true"
         ></ball>
-        <i class="iconfont iconloufang" id="loufang"></i>
-        <i class="iconfont iconicon-test" id="paoche"></i>
       </div>
     </div>
     <land></land>
@@ -54,22 +62,20 @@ export default {
       easing: "linear"
     });
     my.add({
-      translateY: [-_this.h, 0],
-      duration: 500,
-      endDelay: 1000
-    })
-      .add({
-        translateX: _this.w / 2,
-        duration: 1000
-      })
-      .add({
-        duration: 5000,
-        complete: function() {
-          dad.chat = false;
-          son.chat = true;
-          son.speakMsg = "你们是我爸妈么?!";
-        }
-      });
+      translateX: _this.w / 2,
+      duration: 1000,
+      complete: function() {
+        son.chat = true;
+        son.speakMsg = "爸妈,我成绩出来了";
+      }
+    }).add({
+      duration: 6000,
+      complete: function() {
+        dad.chat = false;
+        son.chat = true;
+        son.speakMsg = "还行，还行，正常发挥 😁";
+      }
+    });
 
     //父母时间线
     let parents = _this.$anime.timeline({
@@ -78,44 +84,27 @@ export default {
     });
     parents
       .add({
-        duration: 1000,
+        duration: 3000,
         complete: function() {
+          son.chat = false;
           dad.chat = true;
-          dad.speakMsg = "儿子，快到爸爸这来！";
-        }
-      })
-      .add({
-        duration: 2000,
-        complete: function() {
-          dad.chat = false;
-          mom.chat = true;
-          mom.speakMsg = "老公,儿子长得像你。真黑~~ 😄";
+          dad.speakMsg = "来让老爸看看";
         }
       })
       .add({
         duration: 2000,
         complete: function() {
           dad.chat = true;
-          mom.chat = false;
-          dad.speakMsg = "黑黑更健康，知道啥！";
+          dad.speakMsg = "考得这么好 👍，老爸送你辆跑车";
         }
       })
       .add({
-        duration: 5000,
+        duration: 4000,
         complete: function() {
           son.chat = false;
           dad.chat = false;
           mom.chat = true;
-          mom.speakMsg = "肯定了，傻孩子";
-        }
-      })
-      .add({
-        duration: 2000,
-        complete: function() {
-          son.chat = false;
-          dad.chat = true;
-          mom.chat = false;
-          dad.speakMsg = "我跟你说，老爸可有钱了，走~~跟我回家吧";
+          mom.speakMsg = "儿子可真争气";
           _this.$anime({
             targets: "#ball-son",
             easing: "linear",
@@ -123,7 +112,7 @@ export default {
             translateX: _this.w,
             duration: 3000,
             complete: function(anime) {
-              _this.$parent.playIndex = 3;
+                _this.$parent.playIndex = 9;
             }
           });
         }
@@ -147,20 +136,49 @@ export default {
     top: -65px !important;
     transform: translateX(70px) !important;
   }
-  #loufang {
-    position: absolute;
-    top: -18rem;
-    font-size: 18rem;
-    color: rgb(27, 27, 27);
-    transform: translateX(20rem);
+}
+.other {
+  position: absolute;
+  right: 40%;
+  top: -180px;
+  display: flex;
+  i {
+    color: rgb(87, 87, 87);
+    font-size: 13rem;
+    position: relative;
   }
-  #paoche {
+  .xiangce {
+    background: white;
+    width: 100px;
+    height: 60px;
+    border: 5px solid black;
     position: absolute;
-    top: -7.3rem;
-    font-size: 10rem;
-    color: rgb(0, 0, 0);
-    transform: translateX(30rem) scaleX(-1);
-    z-index: 2;
+    right: 20%;
+    top: -50px;
+    .dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: black;
+      position: absolute;
+      bottom: 0;
+      &::before,
+      &::after {
+        content: "";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: white;
+        position: absolute;
+        top: 10px;
+      }
+      &::before {
+        left: 10px;
+      }
+      &::after {
+        right: 10px;
+      }
+    }
   }
 }
 </style>

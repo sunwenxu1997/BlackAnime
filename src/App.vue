@@ -2,7 +2,7 @@
   <div id="app">
     <div class="cover" v-if="cover">请翻转手机屏幕！</div>
     <router-view v-else />
-    <p class="hint">版权所有 备案/许可证号：@2019-孙文旭[swx]</p>
+    <!-- <p class="hint">版权所有 备案/许可证号：@2019-孙文旭[swx]</p> -->
   </div>
 </template>
 
@@ -11,23 +11,23 @@ export default {
   name: "App",
   data() {
     return {
-      cover: true
+      cover: false
     };
   },
   created() {
     let _this = this;
-    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
-    window.addEventListener(evt, resize, false);
-    function resize(fals) {
-      if (window.orientation == 0 || window.orientation == 180) {
-        console.log("竖屏");
-        _this.cover = true;
-      } else {
-        console.log("横屏");
-        _this.cover = false;
-      }
-    }
-    resize(true);
+    // var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+    // window.addEventListener(evt, resize, false);
+    // function resize(fals) {
+    //   if (window.orientation == 0 || window.orientation == 180) {
+    //     console.log("竖屏");
+    //     _this.cover = true;
+    //   } else {
+    //     console.log("横屏");
+    //     _this.cover = false;
+    //   }
+    // }
+    // resize(true);
   }
 };
 </script>

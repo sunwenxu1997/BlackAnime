@@ -20,11 +20,67 @@
       "unicode_decimal": 58959
     },
     {
+      "icon_id": "2118928",
+      "name": "蜡烛",
+      "font_class": "lazhu",
+      "unicode": "e6c0",
+      "unicode_decimal": 59072
+    },
+    {
+      "icon_id": "2535158",
+      "name": "烤鸡",
+      "font_class": "kaoji",
+      "unicode": "e71f",
+      "unicode_decimal": 59167
+    },
+    {
+      "icon_id": "3216130",
+      "name": "酒杯",
+      "font_class": "icon--",
+      "unicode": "e739",
+      "unicode_decimal": 59193
+    },
+    {
+      "icon_id": "3904031",
+      "name": "面包",
+      "font_class": "mianbao",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
       "icon_id": "4670126",
       "name": "认识学校",
       "font_class": "renshixuexiao",
       "unicode": "e604",
       "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "5091291",
+      "name": "花瓶",
+      "font_class": "huaping",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "5187405",
+      "name": "书架",
+      "font_class": "shujia",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "5961301",
+      "name": "冰箱",
+      "font_class": "bingxiang",
+      "unicode": "ec4f",
+      "unicode_decimal": 60495
+    },
+    {
+      "icon_id": "5961313",
+      "name": "路灯",
+      "font_class": "ludeng",
+      "unicode": "ec58",
+      "unicode_decimal": 60504
     },
     {
       "icon_id": "6616856",
@@ -39,6 +95,13 @@
       "font_class": "fuzhuang-hudiejie",
       "unicode": "e609",
       "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "8124862",
+      "name": "吊灯",
+      "font_class": "diaodeng",
+      "unicode": "e612",
+      "unicode_decimal": 58898
     },
     {
       "icon_id": "9399847",
