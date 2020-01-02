@@ -11,23 +11,23 @@ export default {
   name: "App",
   data() {
     return {
-      cover: false
+      cover: true
     };
   },
   created() {
     let _this = this;
-    // var evt = "onorientationchange" in window ? "orientationchange" : "resize";
-    // window.addEventListener(evt, resize, false);
-    // function resize(fals) {
-    //   if (window.orientation == 0 || window.orientation == 180) {
-    //     console.log("竖屏");
-    //     _this.cover = true;
-    //   } else {
-    //     console.log("横屏");
-    //     _this.cover = false;
-    //   }
-    // }
-    // resize(true);
+    var evt = "onorientationchange" in window ? "orientationchange" : "resize";
+    window.addEventListener(evt, resize, false);
+    function resize(fals) {
+      if (window.orientation == 0 || window.orientation == 180) {
+        console.log("竖屏");
+        _this.cover = true;
+      } else {
+        console.log("横屏");
+        _this.cover = false;
+      }
+    }
+    resize(true);
   }
 };
 </script>
