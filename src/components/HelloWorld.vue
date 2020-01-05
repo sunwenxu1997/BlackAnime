@@ -85,7 +85,7 @@ export default {
   },
   data() {
     return {
-      playIndex: 23
+      playIndex: 0
     };
   }
 };

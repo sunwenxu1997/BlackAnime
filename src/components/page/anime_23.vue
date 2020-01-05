@@ -146,7 +146,10 @@ export default {
           loop: 3,
           opacity: 1,
           direction: "alternate",
-          duration: 1000
+          duration: 1000,
+          complete:function () {
+            //   _this.$parent.playIndex = 10;
+          }
         });
       }
     });
