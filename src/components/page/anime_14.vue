@@ -1,5 +1,8 @@
 <template>
   <div class="overall">
+    <div class="cover">
+        <h2>梦醒了</h2>
+    </div>
     <splitText
       id="title"
       :text="title"
@@ -39,9 +42,6 @@
       ></mountain>
       <land :chongzi="false" :stone="false"></land>
     </div>
-    <div class="playBtn" @click="play()" ref="play" v-if="playShow">
-      <div class="btn"></div>
-    </div>
   </div>
 </template>
 
@@ -74,12 +74,12 @@ export default {
       h: window.innerHeight / 2,
       playShow: true,
       mountainList: [],
-      title: "My Dream",
-      msg: "我的 梦想"
+      title: "",
+      msg: ""
     };
   },
   created() {
-    let _this = this
+    let _this = this;
     for (let i = 0; i < 8; i++) {
       let obj = {
         mw: _this.$anime.random(500, _this.w),
@@ -92,6 +92,12 @@ export default {
   mounted() {
     let _this = this;
     _this.playAnime();
+    _this.$anime({
+      delay: 2000,
+      targets: ".cover",
+      duration: 2000,
+      opacity: [1,0]
+    });
     //飞鸟动画
     _this.$anime({
       targets: "#bird",
@@ -167,7 +173,7 @@ export default {
       let _this = this;
       let tl = _this.$anime
         .timeline({
-          autoplay: false,
+          autoplay: true,
           loop: 1,
           easing: "linear",
           duration: 1000,
@@ -232,18 +238,13 @@ export default {
                 easing: "linear",
                 translateX: _this.w,
                 complete: function(anime) {
-                  _this.$parent.playIndex = 1;
-                    _this.$parent.$refs.audio0.pause();
+                  _this.$parent.playIndex = 15;
+                  _this.$parent.$refs.audio0.pause();
                   _this.$parent.$refs.audio1.play();
                 }
               });
           }
         });
-      _this.$refs["play"].onclick = tl.play; //开始
-    },
-    play() {
-     this.$parent.$refs.audio0.play();
-      this.playShow = false;
     }
   }
 };
@@ -345,5 +346,19 @@ export default {
   width: 100%;
   height: 100%;
   transform: scale(0.3);
+}
+.cover {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: black;
+  z-index: 9999;
+  opacity: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="chatBox" :style="`top:${top+(-sayMsg.length/8)*10}px;left:${left}%;width:${sayMsg.length*25}px;`">
+  <div class="chatBox" :style="`top:${top+(-sayMsg.length/8)*15}px;left:${left}%;width:${sayMsg.length*25}px;`">
    <!-- 人物聊天框 -->
   {{sayMsg}}
   </div>

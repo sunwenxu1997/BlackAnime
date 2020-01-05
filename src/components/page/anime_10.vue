@@ -99,7 +99,7 @@ export default {
             translateX: _this.w,
             duration: 3000,
             complete: function(anime) {
-            //   _this.$parent.playIndex = 4;
+              _this.$parent.playIndex = 11;
             }
           });
         }

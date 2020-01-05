@@ -1,13 +1,10 @@
 <template>
   <div class="hold-bck">
-    <!-- 朋友对话 -->
+    <!-- 进入页面 -->
     <div class="line">
       <ball id="ball-son" ref="ball-son"></ball>
       <div class="people">
-        <ball id="ball_1" ref="ball_1" :toLeft="true"></ball>
-        <ball :toLeft="true" style="left:50px;"></ball>
-        <ball :toLeft="true" :hudiejie="true" style="left:120px;"></ball>
-        <ball id="ball_2" ref="ball_2" :toLeft="true" style="left:160px;"></ball>
+          <dog id="ball_1" ref="ball_1"></dog>
       </div>
     </div>
     <land></land>
@@ -16,11 +13,13 @@
 
 <script>
 import ball from "@/components/common/people/ball";
+import dog from "@/components/common/people/dog";
 import land from "@/components/common/scene/land";
 export default {
   name: "anime_3",
   components: {
-    ball: ball,
+    dog: dog,
+    ball:ball,
     land: land
   },
   data() {
@@ -33,7 +32,6 @@ export default {
     let _this = this;
     let son = _this.$refs["ball-son"];
     let ball_1 = _this.$refs["ball_1"];
-    let ball_2 = _this.$refs["ball_2"];
     let my = _this.$anime.timeline({
       targets: "#ball-son",
       easing: "linear"
@@ -42,23 +40,11 @@ export default {
       targets: "#ball_1",
       easing: "linear"
     });
-    let ball2 = _this.$anime.timeline({
-      targets: "#ball_2",
-      easing: "linear"
-    });
     ball1.add({
       duration: 2000,
       complete: function() {
         ball_1.chat = true;
-        ball_1.speakMsg = "嘿，晚上出去玩吧！";
-      }
-    });
-    ball2.add({
-      duration: 6000,
-      complete: function() {
-        son.chat = false;
-        ball_2.chat = true;
-        ball_2.speakMsg = "记着开上你老爸的跑车，贼酷 🚘";
+        ball_1.speakMsg = "汪汪~ ";
       }
     });
     my.add({
@@ -70,15 +56,14 @@ export default {
         complete: function() {
           ball_1.chat = false;
           son.chat = true;
-          son.speakMsg = "可以的，刚好我今晚有空";
+          son.speakMsg = "知道了，知道了，今晚带你出去玩";
         }
       })
       .add({
-        duration: 4000,
+        duration: 3000,
         complete: function() {
-          ball_2.chat = false;
           son.chat = true;
-          son.speakMsg = "👌";
+          son.speakMsg = "哎，你这只单身狗 🙃";
         }
       })
       .add({
@@ -86,7 +71,8 @@ export default {
         duration: 3000,
         translateX: _this.w,
         complete: function() {
-            _this.$parent.playIndex = 8;
+            _this.$parent.playIndex = 22
+            ;
         }
       });
   }
@@ -97,5 +83,9 @@ export default {
 .people {
   position: absolute;
   right: 40%;
+  #ball_1{
+      position: absolute;
+      top: -2.3rem;
+  }
 }
 </style>

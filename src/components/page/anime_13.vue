@@ -1,11 +1,11 @@
 <template>
   <div class="hold-bck">
-    <!-- 上学 -->
+    <!-- 火箭发射 -->
     <div class="line">
       <ball id="ball-son" ref="ball-son"></ball>
-      <div id="school">
-        <i class="iconfont iconrenshixuexiao"></i>
-        <div class="name">USA SCHOOL</div>
+      <div id="huojian">
+        <i id="huojian_icon" class="iconfont iconhuojian"></i>
+        <i id="huo" class="iconfont iconhuo"></i>
       </div>
     </div>
     <land></land>
@@ -42,22 +42,41 @@ export default {
         duration: 1000,
         complete: function() {
           son.chat = true;
-          son.speakMsg = "老爸给我安排这么好的学校，让我情何以堪啊~~";
+          son.speakMsg = "这么多年过去了，我终于能飞上宇宙，成为真正的宇航员了";
         }
       })
       .add({
         duration: 4000,
         complete: function() {
           son.chat = true;
-          son.speakMsg = "不管了，为了我的梦想，加油！！👍";
+          son.speakMsg = "Les't go!! 🚀";
         }
       })
       .add({
         delay: 2000,
-        duration: 3000,
-        translateX: _this.w,
+        duration: 1000,
+        translateX: _this.w / 2,
+        opacity: 0,
         complete: function() {
-            _this.$parent.playIndex = 5;
+          _this.$anime({
+            delay: 1000,
+            targets: "#huojian",
+            translateY: -500,
+            duration: 2000,
+            easing: "linear",
+            complete:function () {
+                _this.$parent.playIndex = 14;
+            }
+          });
+          _this.$anime({
+            targets: "#huojian_icon",
+            translateX: [-5, 5],
+            loop: true,
+            duration:100,
+            direction:'alternate',
+            easing:'linear'
+          });
+          
         }
       });
   }
@@ -65,26 +84,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#school {
+#huojian {
   position: absolute;
-  top: -460px;
-  right: 10%;
+  right: 35%;
+  top: -280px;
   i {
-    font-size: 30rem;
+      display: inline-block;
+    font-size: 300px;
   }
-  .name {
-    width: 160px;
-    height: 50px;
+  #huo {
+    font-size: 100px;
     position: absolute;
-    top: 120px;
-    left: 160px;
-    border: 3px solid black;
-    background: black;
-    color: white;
-    text-align: center;
-    line-height: 50px;
-    font-weight: bold;
-    font-size: 17px;
+    left: 100px;
+    bottom: 0;
+    color: red;
+    transform: scaleY(-1) translateY(-80px);
   }
 }
 </style>

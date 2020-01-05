@@ -1,16 +1,25 @@
 <template>
   <div class="canzhuo">
     <span class="line">
-      <i class="iconfont iconlazhu" style="font-size:5rem;top:-15px;"></i>
-      <i class="iconfont iconkaoji" style="top:5px"></i>
-      <i class="iconfont iconmianbao" style="top:15px"></i>
-      <i class="iconfont iconicon--" style="top:5px"></i>
+      <i v-if="fu" class="iconfont iconlazhu" style="font-size:5rem;top:-15px;"></i>
+      <i v-if="fu" class="iconfont iconkaoji" style="top:5px"></i>
+      <i v-if="fu" class="iconfont iconmianbao" style="top:15px"></i>
+      <i v-if="fu" class="iconfont iconicon--" style="top:5px"></i>
+      <i v-if="!fu" class="iconfont iconbaozi"  style="top:30px;font-size:2rem;"></i>
+       <i v-if="!fu" class="iconfont iconbaozi"  style="top:30px;font-size:2rem;"></i>
+        <i v-if="!fu" class="iconfont iconbaozi"  style="top:30px;font-size:2rem;"></i>
+          <i v-if="!fu" class="iconfont iconwan"  style="top:37px;font-size:2rem;margin-left:50px"></i>
+            <i v-if="!fu" class="iconfont iconchahu"  style="top:10px;"></i>
     </span>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  props:{
+    fu:{default:true}
+  }
+};
 </script>
 
 <style lang="scss" scoped>

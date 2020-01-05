@@ -8,6 +8,8 @@
       :style="toLeft?'right: -10px; transform: rotate(45deg);':'left: -10px; transform: rotate(-45deg);'"
     ></i>
     <i id="maozi" class="iconfont iconboshimao" v-if="maozi"></i>
+    <i id="qiang" class="iconfont iconshuiqiang" v-if="qiang"></i>
+    <i id="yusan" class="iconfont icon73" v-if="yusan"></i>
     <chatBox :top="-60" :sayMsg="speakMsg" v-if="chat"></chatBox>
   </div>
 </template>
@@ -23,7 +25,9 @@ export default {
     ball_h: Number,
     hudiejie: { default: false },
     toLeft: { default: false },
-    maozi: { default: false }
+    maozi: { default: false },
+    qiang:{default:false},
+    yusan:{default:false}
   },
   data() {
     return {
@@ -84,6 +88,24 @@ export default {
     left: 0px;
     font-size: 50px;
     color: rgb(73, 73, 73);
+  }
+  #qiang{
+    font-size: 100px;
+    position: absolute;
+    left: -10px;
+    top: -30px;
+    z-index: 10;
+    color: rgb(85, 85, 85);
+    transform: rotate(90deg)
+  }
+  #yusan{
+    display: inline-block;
+    font-size: 5rem;
+    color: #e4e4e488;
+    position: relative;
+    top: -40px;
+    left: -15px;;
+    transform: scaleX(-1)
   }
 }
 </style>

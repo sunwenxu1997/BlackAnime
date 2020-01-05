@@ -6,11 +6,25 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "392128",
+      "name": "雨伞",
+      "font_class": "73",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
       "icon_id": "392207",
       "name": "领带",
       "font_class": "3",
       "unicode": "e6ce",
       "unicode_decimal": 59086
+    },
+    {
+      "icon_id": "631375",
+      "name": "火",
+      "font_class": "huo",
+      "unicode": "e66c",
+      "unicode_decimal": 58988
     },
     {
       "icon_id": "802969",
@@ -20,11 +34,32 @@
       "unicode_decimal": 58959
     },
     {
+      "icon_id": "1013232",
+      "name": "狗肖",
+      "font_class": "gouxiao1",
+      "unicode": "e6dd",
+      "unicode_decimal": 59101
+    },
+    {
+      "icon_id": "1801210",
+      "name": "房子",
+      "font_class": "house",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
       "icon_id": "2118928",
       "name": "蜡烛",
       "font_class": "lazhu",
       "unicode": "e6c0",
       "unicode_decimal": 59072
+    },
+    {
+      "icon_id": "2121755",
+      "name": "茶壶",
+      "font_class": "chahu",
+      "unicode": "e614",
+      "unicode_decimal": 58900
     },
     {
       "icon_id": "2167373",
@@ -41,11 +76,39 @@
       "unicode_decimal": 59167
     },
     {
+      "icon_id": "2571125",
+      "name": "电视机",
+      "font_class": "dianshiji",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    },
+    {
       "icon_id": "3216130",
       "name": "酒杯",
       "font_class": "icon--",
       "unicode": "e739",
       "unicode_decimal": 59193
+    },
+    {
+      "icon_id": "3588513",
+      "name": "火箭",
+      "font_class": "huojian",
+      "unicode": "e6eb",
+      "unicode_decimal": 59115
+    },
+    {
+      "icon_id": "3865234",
+      "name": "货车",
+      "font_class": "huoche",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "3865242",
+      "name": "自行车",
+      "font_class": "zihangche",
+      "unicode": "e615",
+      "unicode_decimal": 58901
     },
     {
       "icon_id": "3904031",
@@ -62,6 +125,13 @@
       "unicode_decimal": 58884
     },
     {
+      "icon_id": "5089124",
+      "name": "包子",
+      "font_class": "baozi",
+      "unicode": "e707",
+      "unicode_decimal": 59143
+    },
+    {
       "icon_id": "5091291",
       "name": "花瓶",
       "font_class": "huaping",
@@ -69,11 +139,25 @@
       "unicode_decimal": 58908
     },
     {
+      "icon_id": "5164021",
+      "name": "水枪",
+      "font_class": "shuiqiang",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
       "icon_id": "5187405",
       "name": "书架",
       "font_class": "shujia",
       "unicode": "e60e",
       "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "5213071",
+      "name": "碗",
+      "font_class": "wan",
+      "unicode": "e625",
+      "unicode_decimal": 58917
     },
     {
       "icon_id": "5327384",
@@ -118,11 +202,25 @@
       "unicode_decimal": 58898
     },
     {
+      "icon_id": "8228254",
+      "name": "灯泡",
+      "font_class": "dengpao",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
       "icon_id": "9399847",
       "name": "跑车",
       "font_class": "icon-test",
       "unicode": "e6f8",
       "unicode_decimal": 59128
+    },
+    {
+      "icon_id": "10737670",
+      "name": "电风扇",
+      "font_class": "icon_fan",
+      "unicode": "e605",
+      "unicode_decimal": 58885
     }
   ]
 }

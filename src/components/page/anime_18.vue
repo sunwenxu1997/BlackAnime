@@ -5,7 +5,7 @@
       <ball id="ball-son" ref="ball-son"></ball>
       <div id="school">
         <i class="iconfont iconrenshixuexiao"></i>
-        <div class="name">USA SCHOOL</div>
+        <div class="name">希望小学</div>
       </div>
     </div>
     <land></land>
@@ -42,14 +42,14 @@ export default {
         duration: 1000,
         complete: function() {
           son.chat = true;
-          son.speakMsg = "老爸给我安排这么好的学校，让我情何以堪啊~~";
+          son.speakMsg = "老爸老妈,辛辛苦苦就为了我能上学~";
         }
       })
       .add({
         duration: 4000,
         complete: function() {
           son.chat = true;
-          son.speakMsg = "不管了，为了我的梦想，加油！！👍";
+          son.speakMsg = "为了爸妈，为了我的梦想，加油！！👍";
         }
       })
       .add({
@@ -57,7 +57,7 @@ export default {
         duration: 3000,
         translateX: _this.w,
         complete: function() {
-            _this.$parent.playIndex = 5;
+            _this.$parent.playIndex = 19;
         }
       });
   }
