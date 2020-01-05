@@ -7,6 +7,7 @@
       v-if="hudiejie"
       :style="toLeft?'right: -10px; transform: rotate(45deg);':'left: -10px; transform: rotate(-45deg);'"
     ></i>
+    <i id="maozi" class="iconfont iconboshimao" v-if="maozi"></i>
     <chatBox :top="-60" :sayMsg="speakMsg" v-if="chat"></chatBox>
   </div>
 </template>
@@ -21,7 +22,8 @@ export default {
     ball_w: Number,
     ball_h: Number,
     hudiejie: { default: false },
-    toLeft: { default: false }
+    toLeft: { default: false },
+    maozi: { default: false }
   },
   data() {
     return {
@@ -75,6 +77,13 @@ export default {
     font-weight: bold;
     position: absolute;
     top: -10px;
+  }
+  #maozi {
+    position: relative;
+    top: -30px;
+    left: 0px;
+    font-size: 50px;
+    color: rgb(73, 73, 73);
   }
 }
 </style>

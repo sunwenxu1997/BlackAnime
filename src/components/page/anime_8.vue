@@ -1,6 +1,6 @@
 <template>
   <div class="hold-bck">
-    <!-- 进入页面 -->
+    <!-- 跟爸妈说成绩好 -->
     <div class="line">
       <ball id="ball-son" ref="ball-son"></ball>
       <div class="other">

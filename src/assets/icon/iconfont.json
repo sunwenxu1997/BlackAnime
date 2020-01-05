@@ -27,6 +27,13 @@
       "unicode_decimal": 59072
     },
     {
+      "icon_id": "2167373",
+      "name": "话筒",
+      "font_class": "huatong",
+      "unicode": "e6c1",
+      "unicode_decimal": 59073
+    },
+    {
       "icon_id": "2535158",
       "name": "烤鸡",
       "font_class": "kaoji",
@@ -67,6 +74,13 @@
       "font_class": "shujia",
       "unicode": "e60e",
       "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "5327384",
+      "name": "博士帽",
+      "font_class": "boshimao",
+      "unicode": "e6d0",
+      "unicode_decimal": 59088
     },
     {
       "icon_id": "5961301",

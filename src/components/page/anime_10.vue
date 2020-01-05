@@ -1,12 +1,24 @@
 <template>
   <div class="hold-bck">
-    <i id="diaodeng" class="iconfont icondiaodeng"></i>
-    <!-- 吃饭 -->
+    <div class="mubu">
+      <h2>xxx学校毕业典礼</h2>
+    </div>
+    <!-- 毕业 -->
     <div class="line">
-      <ball id="ball-son" ref="ball-son"></ball>
+      <ball id="ball-son" ref="ball-son" :maozi="true"></ball>
       <immortal id="ball_people" ref="ball_people" :maozi_show="false"></immortal>
-      <div class="parents">
-        <canzhuo></canzhuo>
+      <ball
+        id="ball_g"
+        ref="ball_g"
+        :ball_w="50"
+        :class="'ball_g'"
+        :ball_h="50"
+        :maozi="true"
+        :hudiejie="true"
+        :toLeft="true"
+      ></ball>
+      <div class="huatong">
+        <i class="iconfont iconhuatong"></i>
       </div>
     </div>
     <land></land>
@@ -17,13 +29,11 @@
 import ball from "@/components/common/people/ball";
 import immortal from "@/components/common/people/immortal";
 import land from "@/components/common/scene/land";
-import canzhuo from "@/components/common/scene/canzhuo";
 export default {
   name: "anime_3",
   components: {
     ball: ball,
     land: land,
-    canzhuo: canzhuo,
     immortal: immortal
   },
   data() {
@@ -35,56 +45,53 @@ export default {
   mounted() {
     let _this = this;
     let son = _this.$refs["ball-son"];
+    let g = _this.$refs['ball_g']
     let people = _this.$refs["ball_people"];
     let my = _this.$anime.timeline({
       targets: "#ball-son",
       easing: "linear"
     });
     my.add({
-      translateY:0,
-      duration: 500,
-      endDelay: 1000
-    })
-      .add({
-        translateX: _this.w / 3,
-        duration: 1000
+        translateX: _this.w / 2,
+        duration: 2000
       })
       .add({
-        duration: 1000,
+        duration: 4000,
         complete: function() {
           people.chat = false;
           son.chat = true;
-          son.speakMsg = "哇哦 😱，这么多好吃的~~";
+          son.speakMsg = "谢谢老师";
         }
       })
       .add({
         duration: 5000,
         complete: function() {
           people.chat = false;
+           g.chat = false;
           son.chat = true;
-          son.speakMsg = "真香 😜";
+          son.speakMsg = "❤❤❤❤";
         }
       });
 
-    //仆人时间线
+    // 仆人时间线
     let peopleTime = _this.$anime.timeline({
       targets: "#ball_people",
       easing: "linear"
     });
-    peopleTime
-      .add({
-        duration: 1000,
+    peopleTime .add({
+        duration: 3000,
         complete: function() {
           people.chat = true;
-          people.speakMsg = "少爷，快到这边来就餐吧！";
+          people.speakMsg = "恭喜啊,博士毕业了 🎉";
         }
       })
       .add({
-        duration: 5000,
+        duration:5000,
         complete: function() {
           son.chat = false;
-          people.chat = true;
-          people.speakMsg = "这都是老爷让我给您准备的";
+          people.chat = false;
+          g.chat = true
+          g.speakMsg = "咱们终于可以谈婚事了";
           _this.$anime({
             targets: "#ball-son",
             easing: "linear",
@@ -92,7 +99,7 @@ export default {
             translateX: _this.w,
             duration: 3000,
             complete: function(anime) {
-              _this.$parent.playIndex = 4;
+            //   _this.$parent.playIndex = 4;
             }
           });
         }
@@ -102,50 +109,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#diaodeng {
-  position: absolute;
-  left: 45%;
-  top: -25px;
-  font-size: 10rem;
-  transform-origin: 50% 0;
-  animation: huangdong 2s linear infinite alternate;
-}
-@keyframes huangdong {
-  0% {
-    transform: rotate(-5deg);
-  }
-  100% {
-    transform: rotate(5deg);
-  }
-}
-.parents {
-  height: 50px;
-  background: red;
-  position: absolute;
-  right: 40%;
-  display: flex;
-  justify-content: flex-end;
-  #ball-parents {
-    top: -70px;
-  }
-  .ball-mom {
-    top: -65px !important;
-    transform: translateX(70px) !important;
-  }
-  #loufang {
+#ball_g{
     position: absolute;
-    top: -18rem;
-    font-size: 18rem;
-    color: rgb(27, 27, 27);
-    transform: translateX(20rem);
+    right: 25%;
+}
+.mubu{
+  width: 700px;
+  height: 400px;
+  background: #8b8b8b;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 350px);
+  h2{
+    color: white;
+    text-align: center;
+    margin-top: 150px;
   }
-  #paoche {
+}
+.huatong{
+  width: 5px;
+  height: 100px;
+  background: rgb(43, 42, 42);
+  position: absolute;
+  right: 35%;
+  top: -100px;
+  i{
+    font-size: 35px;
     position: absolute;
-    top: -7.3rem;
-    font-size: 10rem;
-    color: rgb(0, 0, 0);
-    transform: translateX(30rem) scaleX(-1);
-    z-index: 2;
+    top: -20px;
+    left: -15px;
   }
 }
 </style>
