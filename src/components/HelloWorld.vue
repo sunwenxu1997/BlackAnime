@@ -27,6 +27,13 @@
     <anime21 v-if="playIndex == 21"></anime21>
     <anime22 v-if="playIndex == 22"></anime22>
     <anime23 v-if="playIndex == 23"></anime23>
+    <anime24 v-if="playIndex == 24"></anime24>
+    <anime25 v-if="playIndex == 25"></anime25>
+    <anime26 v-if="playIndex == 26"></anime26>
+    <anime27 v-if="playIndex == 27"></anime27>
+    <anime28 v-if="playIndex == 28"></anime28>
+    <anime29 v-if="playIndex == 29"></anime29>
+    <anime30 v-if="playIndex == 30"></anime30>
   </div>
 </template>
 
@@ -55,6 +62,13 @@ import anime_20 from "@/components/page/anime_20";
 import anime_21 from "@/components/page/anime_21";
 import anime_22 from "@/components/page/anime_22";
 import anime_23 from "@/components/page/anime_23";
+import anime_24 from "@/components/page/anime_24";
+import anime_25 from "@/components/page/anime_25";
+import anime_26 from "@/components/page/anime_26";
+import anime_27 from "@/components/page/anime_27";
+import anime_28 from "@/components/page/anime_28";
+import anime_29 from "@/components/page/anime_29";
+import anime_30 from "@/components/page/anime_30";
 export default {
   name: "HelloWorld",
   components: {
@@ -82,6 +96,13 @@ export default {
     anime21: anime_21,
     anime22: anime_22,
     anime23: anime_23,
+    anime24: anime_24,
+    anime25: anime_25,
+    anime26: anime_26,
+    anime27: anime_27,
+    anime28: anime_28,
+    anime29: anime_29,
+    anime30: anime_30,
   },
   data() {
     return {

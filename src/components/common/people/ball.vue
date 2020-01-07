@@ -10,6 +10,7 @@
     <i id="maozi" class="iconfont iconboshimao" v-if="maozi"></i>
     <i id="qiang" class="iconfont iconshuiqiang" v-if="qiang"></i>
     <i id="yusan" class="iconfont icon73" v-if="yusan"></i>
+    <div id="guaizhang" v-if="guaizhang"></div>
     <chatBox :top="-60" :sayMsg="speakMsg" v-if="chat"></chatBox>
   </div>
 </template>
@@ -27,7 +28,8 @@ export default {
     toLeft: { default: false },
     maozi: { default: false },
     qiang:{default:false},
-    yusan:{default:false}
+    yusan:{default:false},
+    guaizhang:{default:false}
   },
   data() {
     return {
@@ -106,6 +108,24 @@ export default {
     top: -40px;
     left: -15px;;
     transform: scaleX(-1)
+  }
+  #guaizhang{
+    width: 10px;
+    height: 15px;
+    border: 4px solid white;
+    border-top-color: black;
+    position: absolute;
+    bottom: 15px;
+    left: 18px;
+    &::after{
+      content: '';
+      width: 5px;
+      height: 20px;
+      background: white;
+      position: absolute;
+      bottom: -20px;
+      left: -2px;
+    }
   }
 }
 </style>

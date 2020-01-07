@@ -112,9 +112,7 @@ export default {
       delay: 2000,
       duration: 1000,
       translateX: _this.w / 2,
-      complete: function() {
-        // _this.$parent.playIndex = 10;
-      }
+     
     });
     _this.$anime({
       targets: "#huoche",
@@ -148,7 +146,7 @@ export default {
           direction: "alternate",
           duration: 1000,
           complete:function () {
-            //   _this.$parent.playIndex = 10;
+              _this.$parent.playIndex = 24;
           }
         });
       }

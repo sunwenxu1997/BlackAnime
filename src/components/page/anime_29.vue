@@ -221,7 +221,7 @@ export default {
                 complete: function() {
                   immortal.chat = false;
                   ball.chat = true;
-                  ball.speakMsg = "做一名宇航员";
+                  ball.speakMsg = "我....";
                 }
               })
               .add({
@@ -229,7 +229,7 @@ export default {
                 complete: function() {
                   immortal.chat = true;
                   ball.chat = false;
-                  immortal.speakMsg = "OK!";
+                  immortal.speakMsg = "好好想想";
                 }
               })
               .add({
@@ -239,7 +239,7 @@ export default {
                 easing: "linear",
                 translateX: _this.w,
                 complete: function(anime) {
-                  _this.$parent.playIndex = 15;
+                  _this.$parent.playIndex = 30;
                 }
               });
           }

@@ -1,5 +1,6 @@
 <template>
   <div class="hold-bck">
+    <div class="cover"></div>
     <!-- 火箭发射 -->
     <div class="line">
       <ball id="ball-son" ref="ball-son"></ball>
@@ -64,19 +65,26 @@ export default {
             translateY: -500,
             duration: 2000,
             easing: "linear",
-            complete:function () {
-                _this.$parent.playIndex = 14;
+            complete: function() {
+              _this.$anime({
+                targets: ".cover",
+                easing: "linear",
+                opacity: 1,
+                duration: 1000,
+                complete: function() {
+                  _this.$parent.playIndex = 14;
+                }
+              });
             }
           });
           _this.$anime({
             targets: "#huojian_icon",
             translateX: [-5, 5],
             loop: true,
-            duration:100,
-            direction:'alternate',
-            easing:'linear'
+            duration: 100,
+            direction: "alternate",
+            easing: "linear"
           });
-          
         }
       });
   }
@@ -89,7 +97,7 @@ export default {
   right: 35%;
   top: -280px;
   i {
-      display: inline-block;
+    display: inline-block;
     font-size: 300px;
   }
   #huo {
@@ -100,5 +108,15 @@ export default {
     color: red;
     transform: scaleY(-1) translateY(-80px);
   }
+}
+.cover {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  opacity: 0;
+  z-index: 9999;
 }
 </style>
