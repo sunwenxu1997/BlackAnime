@@ -1,5 +1,9 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/3_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/3_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/3_3.mp3" preload></audio>
+    <audio ref="mp3_4" src="static/music/3_4.mp3" preload></audio>
     <i id="diaodeng" class="iconfont icondiaodeng"></i>
     <!-- 吃饭 -->
     <div class="line">
@@ -54,6 +58,7 @@ export default {
         complete: function() {
           people.chat = false;
           son.chat = true;
+           _this.$refs.mp3_2.play()
           son.speakMsg = "哇哦 😱，这么多好吃的~~";
         }
       })
@@ -62,6 +67,7 @@ export default {
         complete: function() {
           people.chat = false;
           son.chat = true;
+           _this.$refs.mp3_4.play()
           son.speakMsg = "真香 😜";
         }
       });
@@ -76,6 +82,7 @@ export default {
         duration: 1000,
         complete: function() {
           people.chat = true;
+           _this.$refs.mp3_1.play()
           people.speakMsg = "少爷，快到这边来就餐吧！";
         }
       })
@@ -84,6 +91,7 @@ export default {
         complete: function() {
           son.chat = false;
           people.chat = true;
+           _this.$refs.mp3_3.play()
           people.speakMsg = "这都是老爷让我给您准备的";
           _this.$anime({
             targets: "#ball-son",

@@ -1,5 +1,10 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/8_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/8_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/22_3.mp3" preload></audio>
+    <audio ref="mp3_4" src="static/music/8_4.mp3" preload></audio>
+    <audio ref="mp3_5" src="static/music/8_5.mp3" preload></audio>
     <!-- 跟爸妈说成绩好 -->
     <div class="line">
       <ball id="ball-son" ref="ball-son"></ball>
@@ -66,6 +71,7 @@ export default {
       duration: 1000,
       complete: function() {
         son.chat = true;
+        _this.$refs.mp3_1.play()
         son.speakMsg = "爸妈,我成绩出来了";
       }
     }).add({
@@ -73,6 +79,7 @@ export default {
       complete: function() {
         dad.chat = false;
         son.chat = true;
+         _this.$refs.mp3_4.play()
         son.speakMsg = "还行，还行，正常发挥 😁";
       }
     });
@@ -88,6 +95,7 @@ export default {
         complete: function() {
           son.chat = false;
           dad.chat = true;
+           _this.$refs.mp3_2.play()
           dad.speakMsg = "来让老爸看看";
         }
       })
@@ -95,6 +103,7 @@ export default {
         duration: 2000,
         complete: function() {
           dad.chat = true;
+          _this.$refs.mp3_3.play()
           dad.speakMsg = "考得这么好 👍，让你妈给你做点好吃的";
         }
       })
@@ -104,7 +113,8 @@ export default {
           son.chat = false;
           dad.chat = false;
           mom.chat = true;
-          mom.speakMsg = "儿子可真争气";
+           _this.$refs.mp3_5.play()
+          mom.speakMsg = "我们家儿子可真争气";
           _this.$anime({
             targets: "#ball-son",
             easing: "linear",

@@ -1,5 +1,9 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/10_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/10_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/25_3.mp3" preload></audio>
+    <audio ref="mp3_4" src="static/music/25_4.mp3" preload></audio>
     <div class="mubu">
       <h2>xxx学校毕业典礼</h2>
     </div>
@@ -50,6 +54,7 @@ export default {
         complete: function() {
           people.chat = false;
           son.chat = true;
+          _this.$refs.mp3_2.play()
           son.speakMsg = "谢谢老师";
         }
       })
@@ -58,6 +63,7 @@ export default {
         complete: function() {
           people.chat = false;
           son.chat = true;
+           _this.$refs.mp3_4.play()
           son.speakMsg = "应该的";
         }
       });
@@ -72,6 +78,7 @@ export default {
         duration: 3000,
         complete: function() {
           people.chat = true;
+          _this.$refs.mp3_1.play()
           people.speakMsg = "恭喜啊,博士毕业了 🎉";
         }
       })
@@ -80,6 +87,7 @@ export default {
         complete: function() {
           son.chat = false;
           people.chat = true;
+           _this.$refs.mp3_3.play()
           people.speakMsg = "拄着拐杖来参加毕业典礼，真是身残志坚啊";
         }
       })

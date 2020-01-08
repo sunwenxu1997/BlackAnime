@@ -1,5 +1,8 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/13_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/13_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/13_bck.mp3" preload></audio>
     <div class="cover"></div>
     <!-- 火箭发射 -->
     <div class="line">
@@ -43,6 +46,7 @@ export default {
         duration: 1000,
         complete: function() {
           son.chat = true;
+          _this.$refs.mp3_1.play();
           son.speakMsg = "这么多年过去了，我终于能飞上宇宙，成为真正的宇航员了";
         }
       })
@@ -50,6 +54,7 @@ export default {
         duration: 4000,
         complete: function() {
           son.chat = true;
+          _this.$refs.mp3_2.play();
           son.speakMsg = "Les't go!! 🚀";
         }
       })
@@ -58,7 +63,9 @@ export default {
         duration: 1000,
         translateX: _this.w / 2,
         opacity: 0,
+
         complete: function() {
+           _this.$refs.mp3_3.play();
           _this.$anime({
             delay: 1000,
             targets: "#huojian",

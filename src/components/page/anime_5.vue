@@ -1,5 +1,9 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/5_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/5_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/5_3.mp3" preload></audio>
+    <audio ref="mp3_4" src="static/music/5_4.mp3" preload></audio>
     <div class="hint">
       <h2>放学回去的路上...</h2>
     </div>
@@ -60,7 +64,8 @@ export default {
         complete: function() {
           g.chat = false;
           son.chat = true;
-          son.speakMsg = "额，这个~~~ 我考虑考虑 ";
+           _this.$refs.mp3_2.play()
+          son.speakMsg = "嗯，这个~~~ 我考虑考虑 ";
         }
       })
       .add({
@@ -68,6 +73,7 @@ export default {
         complete: function() {
           g.chat = false;
           son.chat = true;
+           _this.$refs.mp3_4.play()
           son.speakMsg = "好的，好的，我记下了，回头联系";
         }
       })
@@ -86,6 +92,7 @@ export default {
     girl.add({
       duration: 5000,
       complete: function() {
+         _this.$refs.mp3_1.play()
         son.chat = false;
         g.chat = true;
         g.speakMsg = "同学,我好喜欢你❤,能做我男朋友么 😘";
@@ -93,9 +100,10 @@ export default {
     }).add({
       duration: 5000,
       complete: function() {
+         _this.$refs.mp3_3.play()
         son.chat = false;
         g.chat = true;
-        g.speakMsg = "尽快给我答复哦，我微信xxxx";
+        g.speakMsg = "尽快给我答复哦，我电话xxxxx";
       }
     });
   }

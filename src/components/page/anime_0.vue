@@ -1,5 +1,8 @@
 <template>
   <div class="overall">
+    <audio ref="mp3_1" src="static/music/0_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/0_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/0_3.mp3" preload></audio>
     <splitText
       id="title"
       :text="title"
@@ -205,6 +208,7 @@ export default {
                 easing: "linear",
                 duration: 3000,
                 complete: function(anime) {
+                  _this.$refs.mp3_1.play()
                   immortal.chat = true;
                   immortal.speakMsg = "你好少年,你的梦想是什么";
                 }
@@ -212,6 +216,7 @@ export default {
               .add({
                 duration: 1500,
                 complete: function() {
+                   _this.$refs.mp3_2.play()
                   immortal.chat = false;
                   ball.chat = true;
                   ball.speakMsg = "做一名宇航员";
@@ -220,6 +225,7 @@ export default {
               .add({
                 duration: 1500,
                 complete: function() {
+                   _this.$refs.mp3_3.play()
                   immortal.chat = true;
                   ball.chat = false;
                   immortal.speakMsg = "OK!";
@@ -235,6 +241,7 @@ export default {
                   _this.$parent.playIndex = 1;
                     _this.$parent.$refs.audio0.pause();
                   _this.$parent.$refs.audio1.play();
+                  _this.$parent.$refs.audio1.volume = 0.2;
                 }
               });
           }
@@ -243,6 +250,7 @@ export default {
     },
     play() {
      this.$parent.$refs.audio0.play();
+      this.$parent.$refs.audio0.volume = 0.3;
       this.playShow = false;
     }
   }

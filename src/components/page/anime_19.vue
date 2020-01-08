@@ -1,5 +1,10 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/19_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/19_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/19_3.mp3" preload></audio>
+    <audio ref="mp3_4" src="static/music/19_4.mp3" preload></audio>
+    <audio ref="mp3_5" src="static/music/19_5.mp3" preload></audio>
     <div class="hint">
       <h2>放学回去的路上...</h2>
     </div>
@@ -51,6 +56,7 @@ export default {
       translateX: _this.w / 2.5,
       duration: 5000,
       begin: function() {
+        _this.$refs.mp3_1.play()
         son.chat = true;
         son.speakMsg = "今天一定要给她表白~~ ❤";
       }
@@ -60,6 +66,7 @@ export default {
         complete: function() {
           g.chat = false;
           son.chat = true;
+          _this.$refs.mp3_3.play()
           son.speakMsg = "emm.. 其实我喜欢你很久了，希望.. ";
         }
       })
@@ -68,6 +75,7 @@ export default {
         complete: function() {
           g.chat = false;
           son.chat = true;
+          _this.$refs.mp3_5.play()
           son.speakMsg = "噢..    好吧 😥";
         }
       })
@@ -88,6 +96,7 @@ export default {
       complete: function() {
         son.chat = false;
         g.chat = true;
+        _this.$refs.mp3_2.play()
         g.speakMsg = "怎么了，小黑同学";
       }
     }).add({
@@ -95,6 +104,7 @@ export default {
       complete: function() {
         son.chat = false;
         g.chat = true;
+        _this.$refs.mp3_4.play()
         g.speakMsg = "额，你回去先照照镜子吧，你是个好人 😂";
       }
     });

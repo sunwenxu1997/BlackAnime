@@ -1,5 +1,11 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/26_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/26_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/26_3.mp3" preload></audio>
+    <audio ref="mp3_4" src="static/music/26_4.mp3" preload></audio>
+    <audio ref="mp3_5" src="static/music/26_5.mp3" preload></audio>
+    <audio ref="mp3_6" src="static/music/26_6.mp3" preload></audio>
     <div class="hint">宇航员面试处</div>
     <!-- 面试处 -->
     <div class="line">
@@ -54,6 +60,7 @@ export default {
         complete: function() {
           dad.chat = false;
           son.chat = true;
+          _this.$refs.mp3_2.play()
           son.speakMsg = "之前的一场意外留下的";
         }
       })
@@ -62,6 +69,7 @@ export default {
         complete: function() {
           dad.chat = false;
           son.chat = true;
+          _this.$refs.mp3_4.play()
           son.speakMsg = "因为我小时候的梦想就是要做一名宇航员";
         }
       })
@@ -70,6 +78,7 @@ export default {
         complete: function() {
           dad.chat = false;
           son.chat = true;
+          _this.$refs.mp3_6.play()
           son.speakMsg = "好的，谢谢 😥";
         }
       })
@@ -99,6 +108,7 @@ export default {
         complete: function() {
           son.chat = false;
           dad.chat = true;
+          _this.$refs.mp3_1.play()
           dad.speakMsg = "你各项要求都达标了，但是你这腿...";
         }
       })
@@ -107,6 +117,7 @@ export default {
         complete: function() {
           son.chat = false;
           dad.chat = true;
+          _this.$refs.mp3_3.play()
           dad.speakMsg = "你为什么要当宇航员呢？";
         }
       })
@@ -115,6 +126,7 @@ export default {
         complete: function() {
           son.chat = false;
           dad.chat = true;
+          _this.$refs.mp3_5.play()
           dad.speakMsg =
             "你很优秀，但是我们有严格的规定，所以说我不能给你通过，抱歉";
         }

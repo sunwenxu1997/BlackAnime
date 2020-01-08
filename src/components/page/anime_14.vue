@@ -1,5 +1,8 @@
 <template>
   <div class="overall">
+    <audio ref="mp3_1" src="static/music/0_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/0_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/0_3.mp3" preload></audio>
     <div class="cover">
       <h2>梦醒了</h2>
     </div>
@@ -90,6 +93,9 @@ export default {
     }
   },
   mounted() {
+     this.$parent.$refs.audio1.pause();
+    this.$parent.$refs.audio0.play();
+    this.$parent.$refs.audio0.volume = 0.3;
     let _this = this;
     _this.$anime({
       targets: ".cover",
@@ -213,6 +219,7 @@ export default {
                 duration: 3000,
                 complete: function(anime) {
                   immortal.chat = true;
+                  _this.$refs.mp3_1.play()
                   immortal.speakMsg = "你好少年,你的梦想是什么";
                 }
               })
@@ -221,6 +228,7 @@ export default {
                 complete: function() {
                   immortal.chat = false;
                   ball.chat = true;
+                  _this.$refs.mp3_2.play()
                   ball.speakMsg = "做一名宇航员";
                 }
               })
@@ -229,6 +237,7 @@ export default {
                 complete: function() {
                   immortal.chat = true;
                   ball.chat = false;
+                  _this.$refs.mp3_3.play()
                   immortal.speakMsg = "OK!";
                 }
               })
@@ -239,6 +248,9 @@ export default {
                 easing: "linear",
                 translateX: _this.w,
                 complete: function(anime) {
+                   _this.$parent.$refs.audio0.pause();
+                  _this.$parent.$refs.audio1.play();
+                  _this.$parent.$refs.audio1.volume = 0.2;
                   _this.$parent.playIndex = 15;
                 }
               });

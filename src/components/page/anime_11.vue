@@ -1,5 +1,7 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/11_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/11_2.mp3" preload></audio>
     <div class="hint">宇航员面试处</div>
     <!-- 面试处 -->
     <div class="line">
@@ -52,6 +54,7 @@ export default {
       complete: function() {
         dad.chat = false;
         son.chat = true;
+         _this.$refs.mp3_2.play()
         son.speakMsg = "谢谢，我一定会继续努力的！";
       }
     });
@@ -65,6 +68,7 @@ export default {
       .add({
         duration: 2000,
         complete: function() {
+           _this.$refs.mp3_1.play()
           son.chat = false;
           dad.chat = true;
           dad.speakMsg = "你各项要求都达标了，可以成为一名宇航员了";

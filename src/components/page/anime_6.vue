@@ -1,5 +1,7 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/6_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/6_2.mp3" preload></audio>
     <!-- 进入页面 -->
     <div class="line">
       <ball id="ball-son" ref="ball-son"></ball>
@@ -40,8 +42,9 @@ export default {
     })
       .add({
         complete: function() {
+           _this.$refs.mp3_1.play()
           son.chat = true;
-          son.speakMsg = "我有这么帅么？🤣 那么多女孩子追求我";
+          son.speakMsg = "我有这么帅么？🤣 那么多的女孩子追求我";
         }
       })
       .add({
@@ -53,6 +56,7 @@ export default {
       .add({
         duration: 5000,
         complete: function() {
+           _this.$refs.mp3_2.play()
           son.chat = true;
           son.speakMsg = "别说，还确实挺帅的~~";
         }

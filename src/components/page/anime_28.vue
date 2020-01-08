@@ -1,5 +1,9 @@
 <template>
   <div class="hold-bck">
+     <audio ref="mp3_1" src="static/music/28_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/28_2.mp3" preload></audio>
+    <audio ref="mp3_3" src="static/music/28_3.mp3" preload></audio>
+    <audio ref="mp3_4" src="static/music/28_4.mp3" preload></audio>
     <!-- 朋友对话 -->
     <div class="cover"></div>
     <div class="line">
@@ -55,6 +59,7 @@ export default {
       duration: 2000,
       complete: function() {
         ball_1.chat = true;
+        _this.$refs.mp3_1.play()
         ball_1.speakMsg = "起立，老师好~~";
       }
     });
@@ -63,6 +68,7 @@ export default {
       complete: function() {
         son.chat = false;
         ball_2.chat = true;
+        _this.$refs.mp3_3.play()
         ball_2.speakMsg = "老师，今天讲什么啊";
       }
     });
@@ -76,6 +82,7 @@ export default {
         complete: function() {
           ball_1.chat = false;
           son.chat = true;
+          _this.$refs.mp3_2.play()
           son.speakMsg = "同学们好";
         }
       })
@@ -84,6 +91,7 @@ export default {
         complete: function() {
           ball_2.chat = false;
           son.chat = true;
+          _this.$refs.mp3_4.play()
           son.speakMsg = "今天讲勾股定理";
         }
       })

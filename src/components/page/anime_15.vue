@@ -1,5 +1,6 @@
 <template>
   <div class="hold-bck">
+     <audio ref="mp3_1" src="static/music/1_1.mp3" preload></audio>
     <!-- 场景1 -->
     <div class="left">
       <p>投胎崖</p>
@@ -60,6 +61,7 @@ export default {
       rotate: 90,
       duration: 0,
       complete: function() {
+        _this.$refs.mp3_1.play()
         _this.$refs.ball.chat = true;
         _this.$refs.ball.speakMsg = "啊~";
         _this.$anime({

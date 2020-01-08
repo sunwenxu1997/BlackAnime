@@ -155,4 +155,5 @@ export default {
     transform: rotate(-30deg);
   }
 }
+
 </style>

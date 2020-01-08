@@ -1,5 +1,6 @@
 <template>
   <div class="cover">
+    <audio ref="mp3_1" src="static/music/24.mp3" preload></audio>
     <h2 class="text">医生，孩子有没有事啊？</h2>
     <h1 class="text">目前已经脱离生命危险，但是....</h1>
     <h2 class="text">但是什么？快说啊！</h2>
@@ -12,6 +13,7 @@
 export default {
   mounted() {
     let _this = this;
+    _this.$refs.mp3_1.play()
     _this.$anime({
       targets: ".text",
       translateX: 100,
@@ -24,6 +26,7 @@ export default {
     _this.$anime({
       duration: 13000,
       complete: function() {
+        _this.$refs.mp3_1.pause()
         _this.$parent.playIndex = 25;
       }
     });

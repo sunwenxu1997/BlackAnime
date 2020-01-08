@@ -1,5 +1,7 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/4_1.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/4_2.mp3" preload></audio>
     <!-- 上学 -->
     <div class="line">
       <ball id="ball-son" ref="ball-son"></ball>
@@ -41,6 +43,7 @@ export default {
       .add({
         duration: 1000,
         complete: function() {
+          _this.$refs.mp3_1.play()
           son.chat = true;
           son.speakMsg = "老爸给我安排这么好的学校，让我情何以堪啊~~";
         }
@@ -48,6 +51,7 @@ export default {
       .add({
         duration: 4000,
         complete: function() {
+          _this.$refs.mp3_2.play()
           son.chat = true;
           son.speakMsg = "不管了，为了我的梦想，加油！！👍";
         }

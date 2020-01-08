@@ -1,5 +1,7 @@
 <template>
   <div class="hold-bck">
+    <audio ref="mp3_1" src="static/music/yusheng.mp3" preload></audio>
+    <audio ref="mp3_2" src="static/music/23.mp3" preload></audio>
     <div class="cover"></div>
     <cloud id="cloud" v-for="(c,index) in 50" :key="index + 'cloud'"></cloud>
     <div id="yudi" class="yudi" v-for="(c,index) in 200" :key="index + 'yudi'"></div>
@@ -36,6 +38,7 @@ export default {
   },
   mounted() {
     let _this = this;
+     _this.$refs.mp3_1.play()
     //乌云
     _this.$anime({
       targets: "#cloud",
@@ -122,6 +125,7 @@ export default {
       easing: "linear",
       complete: function() {
         _this.yushanshow = false;
+        _this.$refs.mp3_2.play()
         _this.$anime({
           targets: "#ball-son",
           translateX: _this.w / 2 - 100,
@@ -146,7 +150,8 @@ export default {
           direction: "alternate",
           duration: 1000,
           complete:function () {
-              _this.$parent.playIndex = 24;
+            _this.$refs.mp3_1.pause();
+            _this.$parent.playIndex = 24;
           }
         });
       }
